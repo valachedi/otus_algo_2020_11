@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+shadowJar {
+    archiveBaseName.set('otus-algo-hw01')
+    archiveVersion.set('1.0')
+    archiveClassifier.set('')
+    manifest {
+        attributes 'Main-Class': 'hw01.Main'
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar
